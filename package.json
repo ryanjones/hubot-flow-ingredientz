@@ -1,0 +1,44 @@
+{
+  "name": "hubot-flow-ingriedentz",
+  "description": "Fresh workflows for github and hipchat.",
+  "version": "0.0.0",
+  "author": "jacobstr <jacobstr@gmail.com>",
+  "license": "MIT",
+
+  "keywords": ["hipchat","hubot","hubot-scripts","workflow","integration"],
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mover-io/hubot-flow-ingriedentz.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/mover-io/hubot-flow-ingriedentz/issues"
+  },
+
+  "dependencies": {
+    "coffee-script": "~1.6",
+    "githubot": "*",
+    "hubot-hipchat": "*",
+    "querystring": "*",
+    "githubot": "*"
+  },
+
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "sinon-chai": "*",
+    "sinon": "*",
+    "grunt-mocha-test": "~0.7.0",
+    "grunt-release": "~0.6.0",
+    "matchdep": "~0.1.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "coffee-errors": "*"
+  },
+
+  "main": "index.coffee",
+
+  "scripts": {
+    "test": "grunt test"
+  }
+}
