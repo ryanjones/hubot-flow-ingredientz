@@ -16,7 +16,10 @@ Then add **hubot-flow-ingriedentz** to your `external-scripts.json`:
 ["hubot-flow-ingriedentz"]
 ```
 
-## Sample Interaction
+## Sample Interaction Skeleton
+
+This is pulled from the yeoman generated default README and does not actually reflect
+interacting with this bot. Leaving it hear for reference.
 
 ```
 user1>> hubot hello
