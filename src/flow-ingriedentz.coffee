@@ -109,6 +109,15 @@ module.exports = (robot) ->
 
 # See http://developer.github.com/webhooks/#events
 #  -> issue_comment
+#
+# Each of the functions below corresponds to a github event type.
+#
+# The issue modification is documented here:
+# http://developer.github.com/v3/issues/#edit-an-issue
+#
+# The general form of the url is:
+#   PATCH /repos/:owner/:repo/issues/:number
+# ... which corresponds to the comment's pull_request_url
 
 issue_comment = (github, robot, payload) ->
 
