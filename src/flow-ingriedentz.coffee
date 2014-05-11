@@ -15,6 +15,10 @@
 #   github login does not match your hipchat login, use the 'workflow
 #   aliasuser' command to define a mapping.
 #
+# Dependencies:
+#   "querystring": "*"
+#   "githubot": "*"
+#
 # Configuration:
 #   Environment Variables:
 #
@@ -106,7 +110,7 @@ module.exports = (robot) ->
 # ... which corresponds to the comment's pull_request_url
 #
 # Sample payloads are provided in the github_api folder. Enjoy.
-# ^^^ Sorry that's in our private hubot repo - github has a pretty good 
+# ^^^ Sorry that's in our private hubot repo - github has a pretty good
 # ui for this, however.
 issue_comment = (github, robot, payload) ->
 
