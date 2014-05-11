@@ -22,10 +22,10 @@
 # Configuration:
 #   Environment Variables:
 #
-#   WORKFLOW_ROOM - ie. 108111_username@conf.hipchat.com - The channel where messages ("1203 has been approved by
+#   WORKFLOW_ROOM - ie. 108111_roomname@conf.hipchat.com - The channel where messages ("1203 has been approved by
 #     Sparks") will be sent.
 #   HUBOT_GITHUB_USER - User that will be used to authenticate against the Github api.
-#   HUBOT_GITHUB_TOKEN - I forget.
+#   HUBOT_GITHUB_TOKEN - (see Configuration)
 #   HUBOT_GITHUB_ORG - e.g. mover-io
 #   HUBOT_GITHUB_REPO - e.g. one,two,three
 #   HUBOT_HIPCHAT_JID - Jabber id for the Hipchat bot
@@ -38,6 +38,14 @@
 # Notes:
 #   The general form of github's API payload can be found here:
 #   https://github.com/github/github-services/tree/master/docs
+#
+# Configuration:
+#   You will have to do the following::
+#   1. Get a HUBOT_GITHUB_TOKEN: curl -u 'HUBOT_GITHUB_USER' -d '{"scopes":["repo"],"note":"hubot"}' \
+#                         https://api.github.com/authorizations
+#
+#   2. Add Webhook w/ Issue Comment to point at your hubot:  https://yourhubothost.com/hubot/github-workflow
+#
 #
 # Author:
 #   jacobstr@gmail.com
@@ -100,19 +108,8 @@ module.exports = (robot) ->
     msg.send "Cool. Mapping #{msg.match[1]} to #{msg.match[2]} when generating @mentions."
 
 # See http://developer.github.com/webhooks/#events
-#
-# Each of the functions below corresponds to a github event type.
-#
-# The issue modification is documented here:
-# http://developer.github.com/v3/issues/#edit-an-issue
-#
-# The general form of the url is:
-#   PATCH /repos/:owner/:repo/issues/:number
-# ... which corresponds to the comment's pull_request_url
-#
-# Sample payloads are provided in the github_api folder. Enjoy.
-# ^^^ Sorry that's in our private hubot repo - github has a pretty good
-# ui for this, however.
+#  -> issue_comment
+
 issue_comment = (github, robot, payload) ->
 
   add_labels = (current, new_labels) ->
