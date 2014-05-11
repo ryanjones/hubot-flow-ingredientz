@@ -22,7 +22,8 @@
 # Configuration:
 #   Environment Variables:
 #
-#   WORKFLOW_ROOM - The channel where messages ("1203 has been approved by Sparks") will be sent.
+#   WORKFLOW_ROOM - ie. 108111_username@conf.hipchat.com - The channel where messages ("1203 has been approved by
+#     Sparks") will be sent.
 #   HUBOT_GITHUB_USER - User that will be used to authenticate against the Github api.
 #   HUBOT_GITHUB_TOKEN - I forget.
 #   HUBOT_GITHUB_ORG - e.g. mover-io
